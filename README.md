@@ -20,23 +20,23 @@ For unknown currencies scale '2' is used.
 ## Usage example
 
 ```go
-	_1usd := money.Make(1, 0, "USD")
-	fmt.Println(_1usd)
+_1usd := money.Make(1, 0, "USD")
+fmt.Println(_1usd)
 
-	_1usd = money.Make(100, 2, "USD")
-	fmt.Println(_1usd)
+_1usd = money.Make(100, 2, "USD")
+fmt.Println(_1usd)
 
-	_10usd := money.FromFloat(10.001, "USD")
-	fmt.Println(_10usd)
+_10usd := money.FromFloat(10.001, "USD")
+fmt.Println(_10usd)
 
-	_100usd, _ := money.FromString("100.00 USD")
-	fmt.Println(_100usd)
+_100usd, _ := money.FromString("100.00 USD")
+fmt.Println(_100usd)
 
-	//Output:
-	// 1.00 USD
-	// 1.00 USD
-	// 10.00 USD
-	// 100.00 USD
+//Output:
+// 1.00 USD
+// 1.00 USD
+// 10.00 USD
+// 100.00 USD
 ```     
 
 ## TODO
