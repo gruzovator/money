@@ -1,6 +1,9 @@
 # Golang Money
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Documentation](https://godoc.org/github.com/gruzovator/money?status.svg)](https://godoc.org/github.com/gruzovator/money)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gruzovator/money)](https://goreportcard.com/report/github.com/gruzovator/money)
+
 
 Money is value type built from currency code and money value in minor units:
 
