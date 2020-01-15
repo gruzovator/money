@@ -2,9 +2,7 @@ package money
 
 import (
 	"fmt"
-	"os"
-	"path/filepath"
-	"runtime"
+	"strings"
 )
 
 type currenciesSystem struct {
@@ -15,20 +13,10 @@ type currenciesSystem struct {
 var currencies currenciesSystem
 
 func init() {
-	_, thisFilePath, _, _ := runtime.Caller(0)
-	iso4217DataFile := filepath.Join(filepath.Dir(thisFilePath), "iso-4217.xml")
-
-	f, err := os.Open(iso4217DataFile)
+	scales, err := CurrencyScalesFromISO4217(strings.NewReader(iso4217data))
 	if err != nil {
-		panic(fmt.Sprintf("open currencies scales data file %s: %s", iso4217DataFile, err))
+		panic(fmt.Sprintf("reading currencies data: %s", err))
 	}
-	defer f.Close()
-
-	scales, err := CurrencyScalesFromISO4217(f)
-	if err != nil {
-		panic(fmt.Sprintf("reading currencies scales data file %s: %s", iso4217DataFile, err))
-	}
-
 	currencies = currenciesSystem{
 		scaleByCode:  scales,
 		defaultScale: 2,

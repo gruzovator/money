@@ -8,15 +8,6 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func init() {
-	testScales := map[string]int{
-		"USD": 2,
-		"KRW": 0,
-		"TND": 3,
-	}
-	money.ReplaceCurrenciesSystem(testScales, 2)
-}
-
 func TestMake(t *testing.T) {
 	cases := []struct {
 		code   string
