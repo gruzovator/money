@@ -3,6 +3,8 @@ package money
 import (
 	"fmt"
 	"os"
+	"path/filepath"
+	"runtime"
 )
 
 type currenciesSystem struct {
@@ -13,7 +15,8 @@ type currenciesSystem struct {
 var currencies currenciesSystem
 
 func init() {
-	const iso4217DataFile = "iso-4217.xml"
+	_, thisFilePath, _, _ := runtime.Caller(0)
+	iso4217DataFile := filepath.Join(filepath.Dir(thisFilePath), "iso-4217.xml")
 
 	f, err := os.Open(iso4217DataFile)
 	if err != nil {
