@@ -24,12 +24,15 @@ For unknown currencies scale '2' is used.
 ### Money creation & representation
 
 ```go
-_1usd := money.Make(1, 0, "USD")
+
+// create money from amount, non-standard scale and currency code
+_1usd := money.Make(1, 0, "USD") 
 fmt.Println(_1usd)
 
 _1usd = money.Make(100, 2, "USD")
 fmt.Println(_1usd)
 
+// create money from float value rounding to currency minor units.
 _10usd := money.FromFloat(10.001, "USD")
 fmt.Println(_10usd)
 
