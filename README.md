@@ -8,9 +8,11 @@
 Money is value type built from currency code and money value in minor units:
 
 ```go
+// Money is amount of money as integer number of minor units and currency code.
+// E.g.: one dollar is Money{100, "USD"} cause "USD" currency has scale 2.
 type Money struct {
-	Amount   int64 // minor units. e.g. cents
-	Currency string // currency code gives scale via global currencies registry
+	Amount   int64
+	Currency string
 }
 ```
 

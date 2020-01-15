@@ -8,6 +8,7 @@ import (
 )
 
 // Money is amount of money as integer number of minor units and currency code.
+// E.g.: one dollar is Money{100, "USD"} cause "USD" currency has scale 2.
 type Money struct {
 	Amount   int64
 	Currency string
