@@ -17,7 +17,9 @@ type Money struct {
 Currencies scales (or "exponents") are package-level constants from ISO4217 data file.
 For unknown currencies scale '2' is used. 
 
-## Usage example
+## Usage examples
+
+### Money creation & representation
 
 ```go
 _1usd := money.Make(1, 0, "USD")
@@ -37,10 +39,23 @@ fmt.Println(_100usd)
 // 1.00 USD
 // 10.00 USD
 // 100.00 USD
+```
+
+### Money Sum
+```go
+converter := money.RatesTableConverter{
+    "USD": 1,
+    "RUB": 60,
+}
+var sum money.Sum
+sum.Add(money.FromFloat(100, "USD"))
+sum.Add(money.FromFloat(600, "RUB"))
+sumValue, _ := sum.Calculate("USD", converter)
+fmt.Println(sumValue)
+
+// Output: 110.00 USD
 ```     
 
 ## TODO
 
-* Currency Converter interface
-* Sum object to sum money value (per currency) with Value(c Converter) methods to get sum value
 * Distribute
