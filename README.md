@@ -47,6 +47,10 @@ fmt.Println(_100usd)
 ```
 
 ### Money Sum
+
+Sum object keeps money amounts per currency. Total sum is calculated by request using 
+currency converter.
+
 ```go
 converter := money.RatesTableConverter{
     "USD": 1,
