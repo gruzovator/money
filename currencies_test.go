@@ -16,4 +16,5 @@ func TestForEachCurrency(t *testing.T) {
 	require.Equal(t, 2, scales["USD"])
 	require.Equal(t, 2, scales["GBP"])
 	require.Equal(t, 2, scales["RUB"])
+	require.Greater(t, len(scales), 100)
 }
