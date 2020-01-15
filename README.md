@@ -9,8 +9,8 @@ Money is value type built from currency code and money value in minor units:
 
 ```go
 type Money struct {
-	Amount   int64
-	Currency string
+	Amount   int64 // minor units. e.g. cents
+	Currency string // currency code gives scale via global currencies registry
 }
 ```
 
