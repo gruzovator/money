@@ -99,6 +99,7 @@ func TestSum_Calculate(t *testing.T) {
 	}
 
 	for _, c := range cases {
+		c := c
 		t.Run(fmt.Sprintf("sum %s", c.items), func(t *testing.T) {
 			var s money.Sum
 			for _, i := range c.items {

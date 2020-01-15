@@ -51,6 +51,7 @@ func TestRatesTableConverter_Convert(t *testing.T) {
 		},
 	}
 	for _, c := range cases {
+		c := c
 		t.Run(fmt.Sprintf("converting %s to %s", c.from, c.to), func(t *testing.T) {
 			m, err := converter.Convert(c.from, c.to)
 			require.NoError(t, err)

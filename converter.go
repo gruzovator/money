@@ -34,5 +34,4 @@ func (c RatesTableConverter) Convert(m Money, toCurrency string) (Money, error) 
 	v := float64(m.Amount) / math.Pow10(ScaleForCurrency(m.Currency))
 	v *= f2 / f1
 	return FromFloat(v, toCurrency), nil
-
 }
